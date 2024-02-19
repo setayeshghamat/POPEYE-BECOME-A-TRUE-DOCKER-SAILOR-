@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  poll:
+    build: ./poll
+    ports:
+      - "5001:80"
+
+  worker:
+    build: ./worker
+
+  result:
+    build: ./result
+    ports:
+      - "4000:80"
+
+  redis:
+    image: "redis"
+    ports:
+      - "6379:6379"
+
+  db:
+    image: "postgres:15.2-alpine"
+    environment:
+      POSTGRES_PASSWORD: password
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  pgdata:
