@@ -9,6 +9,7 @@ services:
       - REDIS_HOST=redis
     networks:
       - poll-tier
+    restart: unless-stopped 
 
   redis:
     image: "redis:alpine"
