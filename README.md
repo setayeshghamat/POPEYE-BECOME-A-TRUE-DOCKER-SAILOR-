@@ -1,58 +1,126 @@
-# 🐳 Popeye, Become a True Docker Sailor!
+# Popeye
 
-**Associated with EPITECH – European Institute of Technology**
+Docker-based microservices project built with Docker Compose.
 
-## 📌 Project Overview
+The project demonstrates how to design, containerize, and orchestrate a multi-service application using isolated services and reproducible infrastructure.
 
-**Popeye** is a DevOps-oriented project focused on designing and deploying a complete **microservices architecture** using **Docker** and **Docker Compose**.
+## Overview
 
-The goal of the project was to gain hands-on experience with **containerization**, **service orchestration**, and **automation**, while integrating multiple technologies into a scalable and maintainable system.
+Popeye is a DevOps-oriented project developed at Epitech.
 
----
+The goal is to build a complete containerized architecture where each service runs in its own Docker container and communicates through a shared Docker Compose environment.
 
-## 🧱 Architecture & Technologies
+## Architecture
 
-The project is composed of several independent services, each running in its own container:
+The application is composed of several independent services:
 
-* **Flask** – Backend API service
-* **Redis** – In-memory data store and cache
-* **Java** – Service-oriented application logic
-* **PostgreSQL** – Relational database
-* **Node.js** – Frontend / additional service layer
+| Service    | Role                                 |
+| ---------- | ------------------------------------ |
+| Flask      | Backend API                          |
+| Redis      | In-memory data store and cache       |
+| Java       | Service-oriented application logic   |
+| PostgreSQL | Relational database                  |
+| Node.js    | Frontend or additional service layer |
 
-All services are orchestrated using **Docker Compose**, enabling seamless communication, scalability, and reproducible environments.
+The services are orchestrated with Docker Compose.
 
----
+```text
+Flask / Java / Node.js
+        ↓
+      Redis
+        ↓
+   PostgreSQL
+```
 
-## ⚙️ Key Concepts & Features
+## Features
 
 * Microservices architecture
 * Docker containerization
-* Multi-container orchestration with Docker Compose
+* Multi-container orchestration
 * Service-to-service communication
-* Environment isolation and portability
-* Automation and infrastructure optimization
-* DevOps best practices
+* Environment isolation
+* Reproducible local deployment
+* Infrastructure automation
+* DevOps-oriented workflow
 
----
+## Tech Stack
 
-## 🚀 Learning Outcomes
+* Docker
+* Docker Compose
+* Flask
+* Redis
+* Java
+* PostgreSQL
+* Node.js
 
-Through this project, I developed strong practical skills in:
+## Requirements
 
-* Designing container-based architectures
+* Docker
+* Docker Compose
+
+Check Docker installation:
+
+```bash
+docker --version
+docker compose version
+```
+
+## Run
+
+Start all services:
+
+```bash
+docker compose up --build
+```
+
+Run in detached mode:
+
+```bash
+docker compose up --build -d
+```
+
+Stop the services:
+
+```bash
+docker compose down
+```
+
+Stop and remove volumes:
+
+```bash
+docker compose down -v
+```
+
+## Project Structure
+
+```text
+.
+├── flask/
+├── java/
+├── node/
+├── postgres/
+├── redis/
+├── docker-compose.yml
+└── README.md
+```
+
+## Learning Outcomes
+
+This project focuses on practical DevOps skills:
+
+* Designing container-based systems
 * Managing multi-service applications
-* Applying DevOps principles to real-world scenarios
-* Building scalable and maintainable infrastructures
+* Connecting services through Docker networks
+* Using Docker Compose for orchestration
+* Building portable development environments
+* Applying infrastructure and automation principles
 
----
+## Academic Context
 
-## 🛠️ Skills
+Project: Popeye
+School: Epitech – European Institute of Technology
+Field: DevOps, Docker, Microservices
 
-* **Docker**
-* **Docker Compose**
-* **DevOps**
-* Microservices Architecture
-* Backend & Infrastructure Engineering
+## Author
 
-
+Setayesh Ghamat
